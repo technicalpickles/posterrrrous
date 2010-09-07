@@ -1,6 +1,26 @@
 = posterrrrous
 
-Description goes here.
+Quick and dirty ruby wrapper for the Posterous API: http://posterous.com/api/
+
+Install with the usual deal:
+
+    gem install posterrrrous
+
+
+Basically, it's a glorified combo of method_missing and httparty to hit the API endpoints.
+
+    # Your credentials here
+    Posterrrrous.email = "you@example.com"
+    Posterrrrous.email = "so sekrit"
+    
+    # Refer to http://posterous.com/api for API methods, and pass in any parameters as an options hash
+    
+    Posterrrrous.getsites
+    Posterrrrous.readposts :site_id => "1234"
+    Posterrrrous.newpost :site_id => "5678", :title => 'posterrrrous', :body => "oh yeah"
+    
+    last_post = Posterrrrous.readposts.first # last is first, on account of ordered by date descending
+    Posterrrrous.updatepost :post_id => last_post['id'], :body => "#{last_post['body']}... BREAKING UPDATE: wooo!"
 
 == Contributing to posterrrrous
  

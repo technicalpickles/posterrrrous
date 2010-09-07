@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/technicalpickles/posterrrrous"
   gem.authors = ["Joshua Nichols"]
 end
-Jeweler::RubygemsDotOrgsTasks.new
+Jeweler::RubygemsDotOrgTasks.new
 
 require 'rspec/core'
 require 'rspec/core/rake_task'

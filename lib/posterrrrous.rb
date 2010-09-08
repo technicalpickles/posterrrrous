@@ -27,7 +27,6 @@ class Posterrrrous
     status = response.delete('stat')
     if status != "ok"
       error = response['err']
-      require 'ruby-debug'; breakpoint
       raise "Posterous Error #{error['code']}: #{error['msg']}"
     else
       response.values.first
